@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cars', function (Blueprint $table) {
+        Schema::create('type_services', function (Blueprint $table) {
             $table->id();
-            $table->string('car_code')->unique()->nullable(); // e.g., CR001
-            $table->string('brand')->nullable();            // e.g., Toyota
-            $table->string('model')->nullable();            // e.g., Avanza
-            $table->foreignId('car_type_id')->nullable()->constrained('car_types')->onDelete('set null');
-            $table->string('cc')->nullable();               // e.g., 1500
-
+            $table->string('name')->nullable()->unique();       // Contoh: "HEAVY SERVICE"
+            $table->string('code')->nullable();     // Contoh: "HEAVY"
+            $table->text('description')->nullable(); // Keterangan tambahan
             // Relasi ke users (yang terakhir mengubah)
             $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cars');
+        Schema::dropIfExists('type_services');
     }
 };

@@ -62,7 +62,7 @@ class SiteSeeder extends Seeder
                 'target_omset_monthly' => rand(50000000, 150000000),
                 'commission_achieved' => rand(5, 10),
                 'commission_not_achieved' => rand(1, 4),
-                'updated_by' => 1, // opsional, pastikan user id 1 ada
+                // opsional, pastikan user id 1 ada
             ]);
         }
     }

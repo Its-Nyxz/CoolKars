@@ -12,4 +12,17 @@ class SparepartCar extends Model
 
     protected $table = "sparepart_cars";
     protected $guarded = ['id'];
+
+    public function sparepart()
+    {
+        return $this->belongsTo(Sparepart::class);
+    }
+
+    /**
+     * Relasi ke model Car
+     */
+    public function car()
+    {
+        return $this->belongsTo(Car::class);
+    }
 }

@@ -13,22 +13,9 @@ class Car extends Model
     protected $table = "cars";
     protected $guarded = ['id'];
 
-    const TYPE_MEDIUM = 0;
-    const TYPE_CBU    = 1;
-    const TYPE_EUROPE = 2;
-
-    public static function typeOptions(): array
+    public function carType()
     {
-        return [
-            self::TYPE_MEDIUM => 'Medium',
-            self::TYPE_CBU    => 'CBU',
-            self::TYPE_EUROPE => 'Europe',
-        ];
-    }
-
-    public function getTypeNameAttribute(): string
-    {
-        return self::typeOptions()[$this->type] ?? 'Unknown';
+        return $this->belongsTo(CarType::class);
     }
 
     public function spareparts()

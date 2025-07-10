@@ -22,58 +22,29 @@ class SparepartSeeder extends Seeder
         $cars = Car::all();
         $sites = Site::all();
         $names = [
-            'Kampas Rem Depan',
-            'Kampas Rem Belakang',
-            'Filter Oli',
-            'Filter Udara',
-            'Filter Kabin',
-            'Busi',
-            'Aki',
-            'Alternator',
-            'Radiator',
-            'Kipas Radiator',
-            'Kompresor AC',
-            'Condenser AC',
-            'Evaporator AC',
-            'Shockbreaker Depan',
-            'Shockbreaker Belakang',
-            'Kopling Set',
-            'V-Belt',
-            'Timing Belt',
-            'Master Rem',
-            'Kaliper Rem',
-            'Power Steering Pump',
-            'Water Pump',
-            'ECU',
-            'Sensor Oksigen',
-            'Injector',
-            'Tangki Bensin',
-            'Knalpot',
-            'Gearbox',
-            'Headlamp',
-            'Foglamp',
-            'Panel Speedometer',
-            'Handle Pintu',
-            'Switch Power Window',
-            'Kaca Spion',
-            'Wiper Blade',
-            'Motor Wiper',
-            'Relay Starter',
-            'Fuse Box',
-            'Coil Ignition',
-            'Ball Joint'
+            'Expansi Ford Everest',
+            'Evaporator Nissan Serena Belakang',
+            'Compressor Wuling Confero',
+            'Van Belt A-36',
+            'Comp Assy D26A',
+            'Condensor Sirion',
+            'Thermistor Honda HRV',
+            'Condensor Cleaning Liquid',
+            'Evaporator Suzuki SX4',
+            'Condensor Suzuki SX4',
         ];
 
-        for ($i = 1; $i <= 10; $i++) {
+
+        foreach ($names as $index => $name) {
             $sparepart = Sparepart::create([
-                'sparepart_code' => 'SPR-' . str_pad($i, 3, '0', STR_PAD_LEFT),
-                'name' => $names[array_rand($names)],
+                'sparepart_code' => 'SPR-' . str_pad($index, 3, '0', STR_PAD_LEFT),
+                'name' => $name,
                 'status' => rand(0, 1),
                 'denso' => rand(0, 1),
                 'owning' => rand(0, 1), // 0 = CoolKars, 1 = Trading
                 'uom_id' => $uoms->random()->id,
                 'image_path' => null,
-                'updated_by' => 1, // pastikan user ID 1 ada
+                // pastikan user ID 1 ada
             ]);
 
             // Relasi ke 1–2 mobil acak

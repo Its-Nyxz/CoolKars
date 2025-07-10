@@ -33,7 +33,7 @@ class CustomerSeeder extends Seeder
                 'payment_term' => $paymentTerms[array_rand($paymentTerms)],
                 'is_blacklisted' => $faker->boolean(10), // 10% kemungkinan blacklisted
                 'status' => true,
-                'updated_by' => 1,
+
             ]);
 
             // Customer Car

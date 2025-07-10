@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             CompanySeeder::class,
             SiteSeeder::class,
             DepartmentSeeder::class,
+            CarTypeSeeder::class,
+            TypeServiceSeeder::class,
             CarSeeder::class,
             CarParameterSeeder::class,
             CountriesSeeder::class,
@@ -36,6 +38,10 @@ class DatabaseSeeder extends Seeder
             CustomerSeeder::class,
             UomSeeder::class,
             SparepartSeeder::class,
+            ServiceSeeder::class,
+            PromoSeeder::class,
+            CommissionSeeder::class,
+            CommissionRuleSeeder::class,
         ]);
     }
 }

@@ -51,4 +51,21 @@ class Site extends Model
     {
         return $this->hasMany(SparepartSite::class);
     }
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class, 'service_sites')
+            ->withPivot('price')
+            ->withTimestamps();
+    }
+
+    public function serviceSites()
+    {
+        return $this->hasMany(ServiceSite::class);
+    }
+
+    public function commissions()
+    {
+        return $this->hasMany(Commission::class);
+    }
 }

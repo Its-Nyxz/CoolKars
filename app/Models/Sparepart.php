@@ -22,4 +22,11 @@ class Sparepart extends Model
     {
         return $this->hasMany(SparepartSite::class);
     }
+
+    public function sites()
+    {
+        return $this->belongsToMany(Site::class, 'sparepart_sites')
+            ->withPivot('price') // jika ingin tetap akses harga
+            ->withTimestamps();
+    }
 }

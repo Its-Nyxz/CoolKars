@@ -27,7 +27,7 @@ class CompanySeeder extends Seeder
                 'bank_account_name' => 'PT. Cipta Gemilang Bersama',
                 'bank_account_number' => '8015319999',
                 'is_active' => true,
-                'updated_by' => 1,
+
             ],
             [
                 'companie_code' => 'CPY002',
@@ -42,7 +42,7 @@ class CompanySeeder extends Seeder
                 'bank_account_name' => 'PT. Panca Bintang Perkasa',
                 'bank_account_number' => '8015319999',
                 'is_active' => true,
-                'updated_by' => 1,
+
             ],
         ];
 
